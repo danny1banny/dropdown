@@ -12,11 +12,13 @@ const options = [
 ]
 
 const App = () => {
-  const [value, setValue] = useState([]);
+  const [value1, setValue1] = useState([]);
+  const [value2, setValue2] = useState(options[2]);
 
   return(
   <div>
-    <SelectPanel multiple options={options} value={value} onChange={e => setValue(e)} />
+    <SelectPanel multiple options={options} value={value1} onChange={e => setValue1(e)} />
+    <SelectPanel options={options} value={value2} onChange={e => setValue2(e)} />
   </div>
 )}
 

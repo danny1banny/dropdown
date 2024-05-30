@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 10px;
+  padding: 7px 10px;
 }
 
 .value {
@@ -92,7 +92,7 @@
   align-items: center;
   border-radius: 6px;
   height: 25px;
-  padding: 8px 8px;
+  padding: 9px 9px;
   gap: 8px;
   cursor: pointer;
   background-color: #f5f5f5;
@@ -120,10 +120,8 @@
 
 .labelCheckbox {
   display: flex;
-  margin: 14px;
-  padding: 14px 14px;
   width: 100%;
-  align-items: center;
+  margin: 14px;
   border-radius: 6px;
   height: 25px;
   padding: 0;
@@ -132,9 +130,11 @@
 }
 
 .checkbox {
+  display: flex;
+  margin: 14px;
+  align-items: center;
   height: 23px;
   width: 23px; 
-  margin: 0 0 0 auto;
   cursor: pointer;
   transition: 0.5s;
 }
