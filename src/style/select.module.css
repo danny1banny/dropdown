@@ -1,17 +1,25 @@
 .wrapper {
   width: 400px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 200px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .wrapper p {
-  margin: 0;
+  margin-bottom: 5px;
   padding-left:2px;
+  font-weight: 500;
+  color: #333333;
 }
 
 .container {
   position: relative;
-  min-height: 24px;
+  min-height: 26px;
   border: 1px solid rgb(212, 206, 206);
   border-radius: 10px;
   display: flex;
@@ -31,7 +39,7 @@
   display: flex;
   align-items: center;
   height: 40px;
-  margin: 16px;
+  margin: 16px 16px 9px 16px ;
   padding: 0 13px;
   background: #F4F4F4;
   border-radius: 10px;
@@ -54,19 +62,18 @@
 
 .options {
   position: absolute;
-  margin-top: 14px;
+  margin-top: 10px;
   padding: 0;
   list-style: none;
   display: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 100%;
   left: 0;
   box-shadow: 0px 4px 32px rgba(51, 51, 51, 0.15);
   top: calc(100% + 4px);
   background-color: white;
-  font-size: 20px;
-  font-style: normal;
+  font-size: 16px;
   z-index: 100;
 }
 
@@ -81,12 +88,6 @@
   border-bottom: 1px solid #e2dfdf;
 }
 
-
-.option.highlighted {
-  background-color: hsl(200, 100%, 50%);
-  color: white;
-}
-
 .option-badge {
   display: flex;
   align-items: center;
@@ -95,9 +96,15 @@
   padding: 9px 9px;
   gap: 8px;
   cursor: pointer;
-  background-color: #f5f5f5;
+  background-color: #f4f4f4;
   outline: none;
   border: none;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .option-badge svg {
@@ -109,7 +116,7 @@
   display: flex;
   align-items:center;
   position: absolute;
-  left: 360px;
+  left: 375px;
 }
 
 .arrow.active {
@@ -120,21 +127,43 @@
 
 .labelCheckbox {
   display: flex;
+  align-items: center;
   width: 100%;
-  margin: 14px;
+  margin: 10px 16px 10px 16px;
   border-radius: 6px;
   height: 25px;
   padding: 0;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
 }
 
 .checkbox {
-  display: flex;
-  margin: 14px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox+label {
+  display: inline-flex;
   align-items: center;
-  height: 23px;
-  width: 23px; 
-  cursor: pointer;
-  transition: 0.5s;
+  user-select: none;
+}
+.checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #C1C1C1;
+  border-radius: 8px;
+  margin-right: 16px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.checkbox:checked+label::before {
+  border: 2px solid #0049D9;
+  background-image: url('data:image/svg+xml,%3Csvg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect x="1" y="1" width="22" height="22" rx="5" fill="%23005FFD"/%3E%3Crect x="1" y="1" width="22" height="22" rx="5" stroke="%230049D9" stroke-width="2"/%3E%3Cpath d="M9.93426 14.7577L7.58682 12.408C7.22381 12.0446 6.63526 12.0446 6.27226 12.408C5.90925 12.7713 5.90925 13.3604 6.27226 13.7238L9.2703 16.7247C9.63699 17.0918 10.2315 17.0918 10.5982 16.7247L17.7277 9.58834C18.0908 9.22499 18.0908 8.63587 17.7277 8.27252C17.3647 7.90916 16.7762 7.90916 16.4132 8.27252L9.93426 14.7577Z" fill="white"/%3E%3C/svg%3E%0A');
 }

@@ -39,7 +39,10 @@ const SelectPanel = ({multiple, onChange, value, options}) => {
     <div className={styles.wrapper}>
       <p>Язык</p>
       <div
-      onClick={() => setIsOpen(prev => !prev)} 
+      onClick={() => {
+        setIsOpen(prev => !prev)
+        setSearchVale('')
+      }} 
       className={styles.container}
       tabIndex={0} >
         <span className={styles.value}>
@@ -88,7 +91,7 @@ const SelectPanel = ({multiple, onChange, value, options}) => {
                         onClick={()=>{selectOption(option)}}
                         readOnly
                         /> : ""}
-                        
+                        <label htmlFor={option.value}></label>
 
               </li>
             ))}
